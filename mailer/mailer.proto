@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "Core.MailerAdapter";
+
+package mailerWorker;
+
+service Mailer{
+  rpc SendMessage(MessageRequest) returns (MessageReply) {}
+  rpc SendDocumentMessage(DocumentMessageRequest) returns (MessageReply) {}
+}
+
+message MessageRequest {
+  repeated string SendTo = 1;
+  string Subject = 2;
+  string Body = 3;
+}
+message DocumentMessageRequest{
+  repeated string SendTo = 1;
+  string Subject = 2;
+  string Body = 3;
+  repeated Document Documents = 4;
+}
+message MessageReply{
+  string Sent = 1;
+}
+
+message Document{
+  bytes File = 1;
+  string Filename = 2;
+}

@@ -1,0 +1,9 @@
+version: "3"
+
+services: 
+  mailerworker:
+    build: ./
+    container_name: mailerworker
+    restart: unless-stopped
+    ports: 
+      - "5555:80"
