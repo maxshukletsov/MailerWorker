@@ -26,7 +26,7 @@ func CreateMessage(input *MessageRequest) *gomail.Message {
 
 	message := gomail.NewMessage()
 
-	message.SetHeader("From", "noreply@example.ru")
+	message.SetHeader("From", "noreply@examle.ru")
 	message.SetHeader("To", input.SendTo...)
 	message.SetHeader("Subject", input.Subject)
 	message.SetBody("text/html", input.Body)
@@ -38,7 +38,7 @@ func CreateMessageWithDocument(input *DocumentMessageRequest) (*gomail.Message, 
 
 	message := gomail.NewMessage()
 
-	message.SetHeader("From", "noreply@example.ru")
+	message.SetHeader("From", "noreply@examle.ru")
 	message.SetHeader("To", input.SendTo...)
 	message.SetHeader("Subject", input.Subject)
 	message.SetBody("text/html", input.Body)
